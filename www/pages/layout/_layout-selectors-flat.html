@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="format-detection" content="telephone=no">
+
+<link rel="stylesheet" href="/styles/app.css">
+<link rel="stylesheet" href="/styles/styles.css">
+<title>Заголовок</title>
+
+        <script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
+        <script src="/scripts/preloader.js"></script>
+            </head>
+    <body>
+
+        <div class="l-layout__preloader j-preloader">
+            <div id="animation_container" style="background-color:rgba(255, 255, 255, 0.00); width:160px; height:144px">
+                <canvas id="canvas" width="160" height="144" style="position: absolute; display: block; background-color: rgba(255, 255, 255, 0); width: 160px; height: 144px;"></canvas>
+                <div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:160px; height:144px; position: absolute; left: 0px; top: 0px; display: block;">
+                </div>
+            </div>
+        </div>
+
+        <div class="b-mobile-menu j-mobile-menu">
+    <div class="b-mobile-menu__row">
+        <div class="b-mobile-menu__nav">
+            <nav class="b-navigation b-navigation_theme_panel">
+    <ul class="b-navigation__list">
+                    <li class="b-navigation__item">
+                <a
+                        class="b-navigation__link "
+                        href="/pages/about.html">
+                    О квартале
+                </a>
+            </li>
+                    <li class="b-navigation__item">
+                <a
+                        class="b-navigation__link "
+                        href="/pages/location.html">
+                    Расположение
+                </a>
+            </li>
+                    <li class="b-navigation__item">
+                <a
+                        class="b-navigation__link b-navigation__link_is_active"
+                        href="/pages/how-to-buy.html">
+                    Как купить
+                </a>
+            </li>
+                    <li class="b-navigation__item">
+                <a
+                        class="b-navigation__link "
+                        href="/pages/contacts.html">
+                    Контакты
+                </a>
+            </li>
+                    <li class="b-navigation__item">
+                <a
+                        class="b-navigation__link "
+                        href="/pages/news-and-offers.html">
+                    Акции и новости
+                </a>
+            </li>
+                    <li class="b-navigation__item">
+                <a
+                        class="b-navigation__link "
+                        href="/pages/progress.html">
+                    Ход строительства
+                </a>
+            </li>
+                    <li class="b-navigation__item">
+                <a
+                        class="b-navigation__link "
+                        href="/pages/documents.html">
+                    Документы
+                </a>
+            </li>
+                    <li class="b-navigation__item">
+                <a
+                        class="b-navigation__link "
+                        href="/pages/developer.html">
+                    О застройщике
+                </a>
+            </li>
+            </ul>
+</nav>
+        </div>
+        <div class="b-mobile-menu__buttons">
+                <a href="/" class="b-button b-button_theme_green-bg">
+                    <span class="b-button__text">Выбрать квартиру</span>
+            </a>
+                <button type="button"
+            class="b-button j-inline-popup"
+                             data-href="callback"                        >
+                    <span class="b-button__text">Заказать звонок</span>
+            </button>
+        </div>
+        <div class="b-mobile-menu__features">
+            <div class="b-offers-list b-offers-list_theme_nav">
+            <div class="b-offers-list__item b-offers-list__item_has_bg" style="background-image:url('/images/banner/bg3.jpg');">
+            <div class="b-offers-list__item-hover"></div>
+                <a href="/" class="b-offer">
+                    <div class="b-offer__name">Новое</div>
+                <div class="b-offer__title">Виртуальные туры по квартирам</div>
+                    <div class="b-offer__icon"><svg xmlns="http://www.w3.org/2000/svg" width="86" height="40" viewBox="0 0 86 40">
+  <path fill="#FFF" d="M80.7207207,10.3303303 L77.8378378,10.3303303 C77.2372372,4.56456456 72.3123123,0 66.3063063,0 L18.4984985,0 C12.4924925,0 7.68768769,4.56456456 6.96696697,10.3303303 L4.08408408,10.3303303 C1.8018018,10.3303303 0,12.1321321 0,14.4144144 L0,25.5855856 C0,27.8678679 1.8018018,29.6696697 4.08408408,29.6696697 L6.96696697,29.6696697 C7.56756757,35.4354354 12.4924925,40 18.4984985,40 L30.1501502,40 C32.3123123,40 34.3543544,39.1591592 36.036036,37.4774775 C37.7177177,35.7957958 40,34.8348348 42.5225225,34.8348348 C45.045045,34.8348348 47.2072072,35.7957958 49.009009,37.4774775 C50.6906907,39.039039 52.7327327,40 54.8948949,40 L66.5465465,40 C72.5525526,40 77.3573574,35.4354354 78.0780781,29.6696697 L80.960961,29.6696697 C83.2432432,29.6696697 85.045045,27.8678679 85.045045,25.5855856 L85.045045,14.4144144 C84.8048048,12.2522523 83.003003,10.3303303 80.7207207,10.3303303 Z M82.8340841,26.3626126 C82.8340841,27.0833333 82.2334835,27.6839339 81.5127628,27.6839339 L78.75,27.6839339 L78.75,13.75 L81.5127628,13.75 C82.2334835,13.75 82.8340841,14.3506006 82.8340841,15.0713213 L82.8340841,26.3626126 Z M66.9369369,36.9744745 L55.2852853,36.9744745 C53.8438438,36.9744745 52.4024024,36.3738739 51.3213213,35.2927928 C49.039039,33.1306306 46.1561562,31.9294294 42.9129129,31.9294294 C39.6696697,31.9294294 36.7867868,33.1306306 34.5045045,35.2927928 C33.4234234,36.3738739 31.981982,36.9744745 30.5405405,36.9744745 L18.8888889,36.9744745 C13.963964,36.9744745 10,33.0105105 10,28.0855856 L10,11.3888889 C10,6.46396396 13.963964,2.5 18.8888889,2.5 L66.6966967,2.5 C71.6216216,2.5 75.5855856,6.46396396 75.5855856,11.3888889 L75.5855856,28.2057057 C75.8258258,33.0105105 71.8618619,36.9744745 66.9369369,36.9744745 Z M3.75,26.2424925 L3.75,15.0713213 C3.75,14.3506006 4.3506006,13.75 5.07132132,13.75 L7.83408408,13.75 L7.83408408,27.6839339 L5.07132132,27.6839339 C4.3506006,27.5638138 3.75,26.9632132 3.75,26.2424925 Z"/>
+</svg>
+</div>
+                    </a>
+        </div>
+            <div class="b-offers-list__item">
+            <div class="b-offers-list__item-hover"></div>
+                <a href="/" class="b-offer">
+                    <div class="b-offer__name">Акция</div>
+                <div class="b-offer__title">Паркинг в подарок для всех торцевых секций</div>
+                            <div class="b-offer__status">до 12 декабря 2018</div>
+            </a>
+        </div>
+            <div class="b-offers-list__item">
+            <div class="b-offers-list__item-hover"></div>
+                <a href="/" class="b-offer">
+                    <div class="b-offer__name">Новый отчет о строительстве</div>
+                <div class="b-offer__title">Фотоотчет за 6 июня</div>
+                            <div class="b-offer__status">до 12 декабря 2018</div>
+            </a>
+        </div>
+            <div class="b-offers-list__item">
+            <div class="b-offers-list__item-hover"></div>
+                <a href="" class="b-offer">
+                    <div class="b-offer__name">Новость</div>
+                <div class="b-offer__title">Объявляем творческий конкурс для жителей</div>
+                            <div class="b-offer__status">до 12 декабря 2018</div>
+            </a>
+        </div>
+    </div>
+        </div>
+    </div>
+</div>
+
+        <main class="l-layout-selectors l-layout-selectors_state_flat_opened j-wrapper">
+                    </main>
+
+        <div class="b-callback" id="callback">
+    <div class="b-callback__form">
+        <h4 class="b-callback__title"> Заказать звонок</h4>
+                <form action="/tests/form.json" method="post" id="callback">
+            <div class="b-callback__inputs">
+                <div class="b-callback__column">
+                    <label class="b-label" for="tel">
+    Телефон
+</label>
+
+        <input
+            id="tel"
+            class="b-input-telephone j-input"
+            type="tel"
+            name="phone"
+            autocomplete="tel"
+            placeholder="+7(___) ___-__-__"
+            oninvalid="setCustomValidity(' ')"
+            data-error="Введите номер телефона"
+                                     required     >
+                </div>
+                <div class="b-callback__column">
+                    <label class="b-label" for="name">
+    Имя
+</label>
+
+        <input
+        id="name"
+        class="b-input-text j-input"
+        type="text"
+        name="name"
+        maxlength=""
+        autocomplete=""
+        value=""
+        placeholder=""
+        oninvalid="setCustomValidity(' ')"
+        data-error="Введите свое имя"
+                 required                             >
+
+                </div>
+            </div>
+            <div class="b-callback__checkbox">
+                    <div class="b-form__checkbox">
+        <input
+            id="ch1"
+            class="b-form__checkbox-input j-input"
+            type="checkbox"
+            name="policy"
+            oninvalid="setCustomValidity(' ')"
+            data-error="Для продолжения поставьте галочку"
+                                     required         >
+        <label for="ch1" class="b-form__checkbox-label">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+    <path class="b-form__checkbox-box"
+          d="M8.25,5.62h19a3,3,0,0,1,3,3V27.625a3,3,0,0,1-3,3h-19a3,3,0,0,1-3-3V8.62A3,3,0,0,1,8.25,5.62Z"/>
+    <path class="b-form__checkbox-mark" d="M9,17.568l1.809-2.229,5.064,4.829,7.958-8.543L26,13.854,15.872,24.625Z"/>
+</svg>
+            <span class="b-form__checkbox-text">Согласен с <a target="_blank" href="/pages/policy.html" class="b-form__checkbox-link">условиями обработки персональных данных</a></span>
+        </label>
+    </div>
+            </div>
+            <div class="b-callback__submit">
+                <div class="b-callback__submit-column">
+                        <button name="submit" id="submit" type="submit" class="b-input-submit b-button b-button_theme_green-bg">
+                    <span class="b-button__text">Отправить</span>
+            </button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="b-callback__reply"></div>
+</div>
+
+        <div class="b-callback" id="tour">
+    <div class="b-callback__form">
+        <h4 class="b-callback__title"> Записаться на просмотр</h4>
+                <form action="/tests/form.json" method="post" id="tour">
+            <div class="b-callback__inputs">
+                <div class="b-callback__column">
+                    <label class="b-label" for="tel">
+    Телефон
+</label>
+
+        <input
+            id="tel"
+            class="b-input-telephone j-input"
+            type="tel"
+            name="phone"
+            autocomplete="tel"
+            placeholder="+7(___) ___-__-__"
+            oninvalid="setCustomValidity(' ')"
+            data-error="Введите номер телефона"
+                                     required     >
+                </div>
+                <div class="b-callback__column">
+                    <label class="b-label" for="name">
+    Имя
+</label>
+
+        <input
+        id="name"
+        class="b-input-text j-input"
+        type="text"
+        name="name"
+        maxlength=""
+        autocomplete=""
+        value=""
+        placeholder=""
+        oninvalid="setCustomValidity(' ')"
+        data-error="Введите свое имя"
+                 required                             >
+
+                </div>
+            </div>
+            <div class="b-callback__checkbox">
+                    <div class="b-form__checkbox">
+        <input
+            id="ch1"
+            class="b-form__checkbox-input j-input"
+            type="checkbox"
+            name="policy"
+            oninvalid="setCustomValidity(' ')"
+            data-error="Для продолжения поставьте галочку"
+                                     required         >
+        <label for="ch1" class="b-form__checkbox-label">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+    <path class="b-form__checkbox-box"
+          d="M8.25,5.62h19a3,3,0,0,1,3,3V27.625a3,3,0,0,1-3,3h-19a3,3,0,0,1-3-3V8.62A3,3,0,0,1,8.25,5.62Z"/>
+    <path class="b-form__checkbox-mark" d="M9,17.568l1.809-2.229,5.064,4.829,7.958-8.543L26,13.854,15.872,24.625Z"/>
+</svg>
+            <span class="b-form__checkbox-text">Согласен с <a target="_blank" href="/pages/policy.html" class="b-form__checkbox-link">условиями обработки персональных данных</a></span>
+        </label>
+    </div>
+            </div>
+            <div class="b-callback__submit">
+                <div class="b-callback__submit-column">
+                        <button name="submit" id="submit" type="submit" class="b-input-submit b-button b-button_theme_green-bg">
+                    <span class="b-button__text">Отправить</span>
+            </button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="b-callback__reply"></div>
+</div>
+
+        <div class="b-callback" id="request">
+    <div class="b-callback__form">
+        <h4 class="b-callback__title"> Заявка на квартиру № 22</h4>
+                <form action="/tests/form.json" method="post" id="request">
+            <div class="b-callback__inputs">
+                <div class="b-callback__column">
+                    <label class="b-label" for="tel">
+    Телефон
+</label>
+
+        <input
+            id="tel"
+            class="b-input-telephone j-input"
+            type="tel"
+            name="phone"
+            autocomplete="tel"
+            placeholder="+7(___) ___-__-__"
+            oninvalid="setCustomValidity(' ')"
+            data-error="Введите номер телефона"
+                                     required     >
+                </div>
+                <div class="b-callback__column">
+                    <label class="b-label" for="name">
+    Имя
+</label>
+
+        <input
+        id="name"
+        class="b-input-text j-input"
+        type="text"
+        name="name"
+        maxlength=""
+        autocomplete=""
+        value=""
+        placeholder=""
+        oninvalid="setCustomValidity(' ')"
+        data-error="Введите свое имя"
+                 required                             >
+
+                </div>
+            </div>
+            <div class="b-callback__checkbox">
+                    <div class="b-form__checkbox">
+        <input
+            id="ch1"
+            class="b-form__checkbox-input j-input"
+            type="checkbox"
+            name="policy"
+            oninvalid="setCustomValidity(' ')"
+            data-error="Для продолжения поставьте галочку"
+                                     required         >
+        <label for="ch1" class="b-form__checkbox-label">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+    <path class="b-form__checkbox-box"
+          d="M8.25,5.62h19a3,3,0,0,1,3,3V27.625a3,3,0,0,1-3,3h-19a3,3,0,0,1-3-3V8.62A3,3,0,0,1,8.25,5.62Z"/>
+    <path class="b-form__checkbox-mark" d="M9,17.568l1.809-2.229,5.064,4.829,7.958-8.543L26,13.854,15.872,24.625Z"/>
+</svg>
+            <span class="b-form__checkbox-text">Согласен с <a target="_blank" href="/pages/policy.html" class="b-form__checkbox-link">условиями обработки персональных данных</a></span>
+        </label>
+    </div>
+            </div>
+            <div class="b-callback__submit">
+                <div class="b-callback__submit-column">
+                        <button name="submit" id="submit" type="submit" class="b-input-submit b-button b-button_theme_green-bg">
+                    <span class="b-button__text">Отправить</span>
+            </button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="b-callback__reply"></div>
+</div>
+
+        <div class="b-cookie j-cookie">
+    <div class="b-cookie__text">Сайт <a href="/agreement/" target="_blank">использует cookie</a> для персонализации сервисов и удобства пользователей. Если согласны — продолжайте пользоваться сайтом. Если нет — Вы можете запретить сохранение cookie в настройках своего браузера.</div>
+    <button type="button" class="b-cookie__close">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="12" height="12" viewBox="0 0 12 12"><defs><path id="lyh3a" d="M1389.7 766.3l4.25 4.24 4.24-4.25a1 1 0 0 1 1.42 1.42l-4.25 4.24 4.25 4.24a1 1 0 1 1-1.42 1.42l-4.24-4.25-4.24 4.25a1 1 0 1 1-1.42-1.42l4.25-4.24-4.25-4.24a1 1 0 0 1 1.42-1.42z"/></defs><g><g transform="translate(-1388 -766)"><use fill="#fff" xlink:href="#lyh3a"/></g></g></svg> </button>
+</div>
+
+        <script async src="/scripts/app.js?v=1"></script>
+        <script async src="/scripts/selectors.js?v=1"></script>
+    </body>
+</html>

@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="/styles/styles.css">
+    <title>John Smith</title>
+</head>
+    <body>
+        <main class="wrapper">
+            <div class="person">
+                <div class="person__photo">
+                    <img class="person__photo-img" src="/images/photo.png" alt="">
+                </div>
+                <div class="person__info">
+                    <form action="" class="person__form">
+                        <div class="person__name">
+                            <label for="name">Name</label>
+                            <input id="name" type="text" value="John Smith">
+                            <div class="person__controls">
+                                <button type="button" class="person__control person__control_submit">✓</button>
+                                <button type="button" class="person__control person__control_reject">✕</button>
+                            </div>
+                        </div>
+                        <div class="person__country">
+                            <label for="country">Country</label>
+                            <input id="country" type="text" value="Portland, Oregon, USA">
+                            <div class="person__controls">
+                                <button type="button" class="person__control person__control_submit">✓</button>
+                                <button type="button" class="person__control person__control_reject">✕</button>
+                            </div>
+                        </div>
+                        <div class="person__language">English</div>
+                        <ul class="person__skills-list">
+                            <li class="person__skill">PHP</li>
+                            <li class="person__skill">Ruby</li>
+                            <li class="person__skill">Javascript</li>
+                            <li class="person__skill">ActionScript</li>
+                        </ul>
+                        <div class="person__add-skills is-active">
+                            <button class="person__add-skills-btn" type="button">Add skills</button>
+                            <label for="add-skills">Add skills</label>
+                            <select class="person__skills-select" name="add-skills" id="add-skills">
+                                <option value="jquery">jQuery</option>
+                                <option value="dart">Dart</option>
+                                <option value="python">Python</option>
+                            </select>
+                            <div class="person__controls">
+                                <button type="button" class="person__control person__control_submit">✓</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <button type="button" class="print-page-btn" onClick="window.print();">Print this page</button>
+            </div>
+            <div class="information">
+                <section class="information__section">
+                    <h3>
+                        Portfolio
+                        <span class="information__subttl">PHP, Ruby, Javascript</span>
+                    </h3>
+                    <ul class="information__list">
+                        <li><strong>NavalPlan</strong>, PHP, Ruby</li>
+                        <li><strong>MyTime</strong>, Javascript</li>
+                        <li><strong>Formidable</strong>, PHP, Ruby</li>
+                        <li><strong>MyTime</strong>, Javascript</li>
+                        <li><strong>Monsoon</strong>, ActionScript</li>
+                    </ul>
+                </section>
+                <section class="information__section">
+                    <h3>Experience</h3>
+                    <ul class="information__list">
+                        <li><strong>PHP</strong>, 6 years</li>
+                        <li><strong>Ruby</strong>, 7 years</li>
+                        <li><strong>Javascript</strong>, 4 years</li>
+                        <li><strong>ActionScript</strong>, 3 years</li>
+                    </ul>
+                </section>
+                <section class="information__section information__section_type_code">
+                    <h3>Sample code and algorithms</h3>
+                </section>
+                <section class="information__section information__section_type_env">
+                    <h3>Availability</h3>
+                    <div class="information__time">Full-time</div>
+                    <h3>Preferred environment</h3>
+                    <div class="information__env">Git, GitHub, vim, emacs, Jenkins, Mac OSX</div>
+                </section>
+                <section class="information__section">
+                    <h3>The most amazing …</h3>
+                    <blockquote>
+                        <p>… Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua et dolore magna aliqua et dol ut labore et dolore</p>
+                        <footer>
+                            — <cite>Martin</cite>
+                        </footer>
+                    </blockquote>
+                </section>
+                <section class="information__section">
+                    <h3>In clients I look for …</h3>
+                    <blockquote>
+                        <p>… Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua et dolore magna aliqua.</p>
+                        <footer>
+                            — <cite>Martin</cite>
+                        </footer>
+                    </blockquote>
+                </section>
+                <section class="information__section">
+                    <h3>Note</h3>
+                    <blockquote>
+                        <p>… Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua et dolore magna aliqua.</p>
+                        <footer>
+                            — <cite>Martin</cite>
+                        </footer>
+                    </blockquote>
+                </section>
+            </div>
+        </main>
+        <script async src="/scripts/app.js?v=1"></script>
+    </body>
+</html>
