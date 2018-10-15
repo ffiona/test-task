@@ -10,9 +10,7 @@ module.exports = {
     target : 'web',
     context: path.resolve(__dirname, './src'),
     entry  : {
-        app      : ['babel-polyfill', './common/scripts/app'],
-        selectors: './common/scripts/selectors',
-        preloader: './common/scripts/preloader'
+        app      : ['babel-polyfill', './common/scripts/app']
     },
     output: {
         filename: '[name].js',

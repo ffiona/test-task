@@ -77,6 +77,15 @@ body {
     border-color: rgba(0, 0, 0, 0.3); }
 
 .person__controls {
+  -webkit-transition-property: opacity;
+  -o-transition-property: opacity;
+  transition-property: opacity;
+  -webkit-transition-duration: 0.3s;
+       -o-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease;
+       -o-transition-timing-function: ease;
+          transition-timing-function: ease;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -86,7 +95,12 @@ body {
   position: absolute;
   right: 0;
   top: 0;
-  height: 100%; }
+  height: 100%;
+  opacity: 0;
+  visibility: hidden; }
+  .person__controls.is-active {
+    opacity: 1;
+    visibility: visible; }
 
 .person__control {
   border: none;
@@ -112,8 +126,8 @@ body {
   margin-right: 10%;
   background-color: #ddd;
   border-radius: 100%;
-  width: 25px;
-  height: 20px;
+  width: 20px;
+  height: 15px;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -123,25 +137,39 @@ body {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  color: #ffffff; }
+  color: #ffffff;
+  font-size: 100%; }
   .person__control::-moz-focus-inner {
     border: 0;
     padding: 0; }
+  @media screen and (min-width: 650px) {
+    .person__control {
+      font-size: 80%;
+      width: 25px;
+      height: 20px; } }
 
 .person__name {
   position: relative;
-  width: 50%; }
+  width: 100%; }
+  @media screen and (min-width: 650px) {
+    .person__name {
+      width: 50%; } }
   .person__name input {
     font-size: 200%; }
 
 .person__country {
   position: relative;
-  width: 50%;
+  width: 100%;
   margin-bottom: 0.5%; }
+  @media screen and (min-width: 650px) {
+    .person__country {
+      width: 50%; } }
   .person__country input {
     color: rgba(0, 0, 0, 0.6);
     font-weight: 600;
-    font-size: 100%; }
+    font-size: 100%;
+    padding-top: 1%;
+    padding-bottom: 1%; }
 
 .person__language {
   margin-bottom: 3.5%;
@@ -171,7 +199,8 @@ body {
   border-radius: 3px;
   margin-right: 5px;
   text-transform: uppercase;
-  font-size: 90%; }
+  font-size: 90%;
+  position: relative; }
   .person__skill:nth-child(7n + 1) {
     background-color: #993333; }
   .person__skill:nth-child(7n + 2) {
@@ -186,6 +215,53 @@ body {
     background-color: #669933; }
   .person__skill:nth-child(7n + 7) {
     background-color: #479933; }
+  .person__skill:hover .person__skill-remove {
+    opacity: 1;
+    visibility: visible; }
+
+.person__skill-remove {
+  -webkit-transition-property: opacity;
+  -o-transition-property: opacity;
+  transition-property: opacity;
+  -webkit-transition-duration: 0.3s;
+       -o-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease;
+       -o-transition-timing-function: ease;
+          transition-timing-function: ease;
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+  text-align: inherit;
+  outline: none;
+  cursor: pointer;
+  background-color: transparent;
+  /* inherit font & color from ancestor */
+  color: inherit;
+  font: inherit;
+  /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+  line-height: normal;
+  /* Corrects font smoothing for webkit */
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+  /* Corrects inability to style clickable `input` types in iOS */
+  -webkit-appearance: none;
+  /* Remove excess padding and border in Firefox 4+ */
+  position: absolute;
+  right: 2%;
+  top: 20%;
+  background-color: #ff0000;
+  color: #ffffff;
+  border-radius: 10px;
+  padding: 0 5px;
+  font-size: 80%;
+  opacity: 0;
+  visibility: hidden; }
+  .person__skill-remove::-moz-focus-inner {
+    border: 0;
+    padding: 0; }
 
 .person__add-skills {
   -webkit-transition-property: border-color, background-color;
@@ -197,13 +273,20 @@ body {
   -webkit-transition-timing-function: ease;
        -o-transition-timing-function: ease;
           transition-timing-function: ease;
-  width: 40%;
+  width: 100%;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 0.6%;
   position: relative;
-  border: 1px solid transparent; }
+  border: 1px solid transparent;
+  text-align: left; }
+  @media screen and (min-width: 650px) {
+    .person__add-skills {
+      width: 40%; } }
   @media print {
     .person__add-skills {
       display: none; } }
@@ -211,6 +294,9 @@ body {
     background-color: #ffffff;
     border-color: #00ff00; }
     .person__add-skills.is-active .person__skills-select {
+      opacity: 1;
+      visibility: visible; }
+    .person__add-skills.is-active .person__controls {
       opacity: 1;
       visibility: visible; }
 
@@ -256,7 +342,8 @@ body {
           transition-timing-function: ease;
   margin-right: 10%;
   opacity: 0;
-  visibility: hidden; }
+  visibility: hidden;
+  font-size: 100%; }
 
 .print-page-btn {
   border: none;

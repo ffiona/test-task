@@ -18,7 +18,7 @@
                     <form action="" class="person__form">
                         <div class="person__name">
                             <label for="name">Name</label>
-                            <input id="name" type="text" value="John Smith">
+                            <input id="name" type="text" value="John Smith" data-current="John Smith">
                             <div class="person__controls">
                                 <button type="button" class="person__control person__control_submit">✓</button>
                                 <button type="button" class="person__control person__control_reject">✕</button>
@@ -26,7 +26,7 @@
                         </div>
                         <div class="person__country">
                             <label for="country">Country</label>
-                            <input id="country" type="text" value="Portland, Oregon, USA">
+                            <input id="country" type="text" value="Portland, Oregon, USA" data-current="Portland, Oregon, USA">
                             <div class="person__controls">
                                 <button type="button" class="person__control person__control_submit">✓</button>
                                 <button type="button" class="person__control person__control_reject">✕</button>
@@ -34,12 +34,24 @@
                         </div>
                         <div class="person__language">English</div>
                         <ul class="person__skills-list">
-                            <li class="person__skill">PHP</li>
-                            <li class="person__skill">Ruby</li>
-                            <li class="person__skill">Javascript</li>
-                            <li class="person__skill">ActionScript</li>
+                            <li class="person__skill">
+                                PHP
+                                <button type="button" class="person__skill-remove">✕</button>
+                            </li>
+                            <li class="person__skill">
+                                Ruby
+                                <button type="button" class="person__skill-remove">✕</button>
+                            </li>
+                            <li class="person__skill">
+                                Javascript
+                                <button type="button" class="person__skill-remove">✕</button>
+                            </li>
+                            <li class="person__skill">
+                                ActionScript
+                                <button type="button" class="person__skill-remove">✕</button>
+                            </li>
                         </ul>
-                        <div class="person__add-skills is-active">
+                        <div class="person__add-skills">
                             <button class="person__add-skills-btn" type="button">Add skills</button>
                             <label for="add-skills">Add skills</label>
                             <select class="person__skills-select" name="add-skills" id="add-skills">

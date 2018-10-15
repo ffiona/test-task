@@ -1,3 +1,4 @@
+$red: #ff0000;
 $green: #00ff00;
 $black: #000000;
 $white: #ffffff;
@@ -87,12 +88,20 @@ body {
 }
 
 .person__controls {
+    @include transition(opacity);
     display: flex;
     align-items: center;
     position: absolute;
     right: 0;
     top: 0;
     height: 100%;
+    opacity: 0;
+    visibility: hidden;
+
+    &.is-active {
+        opacity: 1;
+        visibility: visible;
+    }
 }
 
 .person__control {
@@ -100,17 +109,28 @@ body {
     margin-right: 10%;
     background-color: $gray;
     border-radius: 100%;
-    width: 25px;
-    height: 20px;
+    width: 20px;
+    height: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
     color: $white;
+    font-size: 100%;
+
+    @media screen and (min-width: 650px) {
+        font-size: 80%;
+        width: 25px;
+        height: 20px;
+    }
 }
 
 .person__name {
     position: relative;
-    width: 50%;
+    width: 100%;
+
+    @media screen and (min-width: 650px) {
+        width: 50%;
+    }
 
     input {
         font-size: 200%;
@@ -119,13 +139,19 @@ body {
 
 .person__country {
     position: relative;
-    width: 50%;
+    width: 100%;
     margin-bottom: 0.5%;
+
+    @media screen and (min-width: 650px) {
+        width: 50%;
+    }
 
     input {
         color: rgba($black, 0.6);
         font-weight: 600;
         font-size: 100%;
+        padding-top: 1%;
+        padding-bottom: 1%;
     }
 }
 
@@ -153,21 +179,50 @@ body {
     margin-right: 5px;
     text-transform: uppercase;
     font-size: 90%;
+    position: relative;
 
     @for $i from 1 through $skills {
         &:nth-child(#{$skills}n + #{$i}) {
             background-color: hsl(($i - 1)*$step, 50%, 40%);
         }
     }
+
+    &:hover {
+        .person__skill-remove {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
+
+.person__skill-remove {
+    @include transition(opacity);
+    @include reset-button;
+    position: absolute;
+    right: 2%;
+    top: 20%;
+    background-color: $red;
+    color: $white;
+    border-radius: 10px;
+    padding: 0 5px;
+    font-size: 80%;
+    opacity: 0;
+    visibility: hidden;
 }
 
 .person__add-skills {
     @include transition(border-color, background-color);
-    width: 40%;
+    width: 100%;
     display: flex;
+    align-items: center;
     padding: 0.6%;
     position: relative;
     border: 1px solid transparent;
+    text-align: left;
+
+    @media screen and (min-width: 650px) {
+        width: 40%;
+    }
 
     @media print {
         display: none;
@@ -178,6 +233,11 @@ body {
         border-color: $green;
 
         .person__skills-select {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .person__controls {
             opacity: 1;
             visibility: visible;
         }
@@ -196,6 +256,7 @@ body {
     margin-right: 10%;
     opacity: 0;
     visibility: hidden;
+    font-size: 100%;
 }
 
 .print-page-btn {
